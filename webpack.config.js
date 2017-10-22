@@ -3,9 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   // devtool: 'source-map', delay to compile :()
-  entry: {
-    entry_1: path.resolve(__dirname, 'polls/static/polls/js/entry_1.js'),
-    entry_2: path.resolve(__dirname, 'polls/static/polls/js/entry_2.js'),
+  entry:  {
     entry_3: [
       'react-hot-loader/patch',
       path.resolve(__dirname, 'polls/static/polls/js/entry_3.js'),
@@ -14,17 +12,28 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'polls/static/polls/js/dist'),
     filename: '[name].min.js',
-    publicPath: 'http://localhost:9000/'
+    publicPath: 'http://localhost:9000/',
   },
   module: {
     rules: [
       {
-        test: /\.js?$/,
+        test: /\.(js|jsx)$/,
         exclude: [
           path.resolve(__dirname, 'node_modules'),
         ],
         use: [
-          'babel-loader',
+          {
+            loader: require.resolve('babel-loader'),
+            options: {
+              // This is a feature of `babel-loader` for webpack (not Babel itself).
+              // It enables caching results in ./node_modules/.cache/babel-loader/
+              // directory for faster rebuilds.
+              cacheDirectory: true,
+              plugins: [
+                'react-hot-loader/babel'
+              ],
+            },
+          }
         ],
       },
       {
@@ -49,7 +58,9 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'polls/static/polls/js/dist'),
+    // publicPath: 'http://localhost:9000/',
+    // contentBase: path.join(__dirname, 'polls/static/polls/js'),
+    stats: { colors: true },
     port: 9000,
     hot: true,
     headers: {

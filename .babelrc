@@ -5,7 +5,7 @@
     "stage-1"
   ],
   "plugins": [
-    "transform-runtime",
-    "react-hot-loader/babel"
+    "react-hot-loader/babel",
+    "transform-runtime"
   ]
 }

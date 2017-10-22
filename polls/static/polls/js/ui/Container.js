@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   border: 1px solid green;
-  width: 100%;
+  width: 50%;
   height: 250px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0,0,0,0.1);
+  background-color: black;
 `;
 
 export default Container;

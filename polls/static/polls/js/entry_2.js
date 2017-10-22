@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  background-color: #0066ff;
+  background-color: #0099FF;
   border: 1px solid #0066ff;
   color: #ffffff;
   padding: 8px 10px;
-  border-radius: 6px;
+  border-radius: 2px;
   cursor: pointer;
   box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
   transition: all 0.3s ease-in-out;
@@ -21,7 +21,7 @@ class Entry2 extends Component {
   render() {
     return (
       <Button>
-        <span>so now</span>
+        <span>Simple button</span>
       </Button>
     );
   }
