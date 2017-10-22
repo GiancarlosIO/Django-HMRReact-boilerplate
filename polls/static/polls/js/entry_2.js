@@ -21,7 +21,7 @@ class Entry2 extends Component {
   render() {
     return (
       <Button>
-        <span>Simple button</span>
+        <span>Simple Button</span>
       </Button>
     );
   }

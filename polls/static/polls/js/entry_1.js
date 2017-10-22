@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <Title>Django</Title>
+        <Title>Django App</Title>
         <Entry2 />
       </Container>
     );

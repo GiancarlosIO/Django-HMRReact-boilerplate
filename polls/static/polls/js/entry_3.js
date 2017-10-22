@@ -12,7 +12,7 @@ const renderApp = (Component) => {
     </AppContainer>,
     document.querySelector('#app'),
     () => {
-      console.log('the entry_3 was mounted in the DOM!');
+      console.log('the entry_3 was mounted in the DOM! React-HMR');
     },
   );
 }
@@ -20,7 +20,6 @@ const renderApp = (Component) => {
 renderApp(App);
 
 if (module.hot) {
-  console.log('module', module);
   module.hot.accept('./entry_1', () => {
     console.log('HOT-REACT DUDE');
     renderApp(App);

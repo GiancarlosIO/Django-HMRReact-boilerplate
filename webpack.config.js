@@ -7,6 +7,7 @@ module.exports = {
     entry_3: [
       'react-hot-loader/patch',
       path.resolve(__dirname, 'polls/static/polls/js/entry_3.js'),
+      'webpack-hot-middleware/client?path=http://localhost:9000/__webpack_hmr',
     ],
   },
   output: {
