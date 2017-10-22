@@ -1,28 +1,32 @@
+require('react-hot-loader/patch');
+
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import styled from 'styled-components';
+import { AppContainer } from 'react-hot-loader';
 
-import Entry2 from './entry_2';
+import App from './entry_1';
 
-const Container = styled.div`
-  border: 1px solid black;
-  width: 100%;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+// first run the webpack then (?)
+const renderApp = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.querySelector('#app'),
+    () => {
+      console.log('the entry_3 was mounted in the DOM!');
+    },
+  );
+}
 
-// first run the webpack then
+renderApp(App);
 
-ReactDOM.render(
-  <Container>
-    <Entry2 />
-  </Container>,
-  document.querySelector('#app'),
-  () => {
-    console.log('the entr3 was mounted in the DOM!');
-  },
-);
+if (module.hot) {
+  console.log('module', module);
+  module.hot.accept('./entry_1', () => {
+    console.log('HOT-REACT DUDE');
+    renderApp(App);
+  });
+}
 
 

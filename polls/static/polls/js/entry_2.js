@@ -1,8 +1,7 @@
-console.log('ENTRY NUMBER 2!!!')
 import React, { Component } from 'react'
 import styled from 'styled-components';
 
-const Button = styled.button`
+export const Button = styled.button`
   background-color: #0066ff;
   border: 1px solid #0066ff;
   color: #ffffff;
@@ -22,7 +21,7 @@ class Entry2 extends Component {
   render() {
     return (
       <Button>
-        <span>Its my button</span>
+        <span>oh god</span>
       </Button>
     );
   }

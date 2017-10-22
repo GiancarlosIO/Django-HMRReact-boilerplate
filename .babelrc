@@ -1,6 +1,11 @@
 {
   "presets": [
-    "env",
-    "react"
+    ["es2015", { "modules": false }],
+    "react",
+    "stage-1"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "react-hot-loader/babel"
   ]
 }
